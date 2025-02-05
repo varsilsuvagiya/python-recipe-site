@@ -21,5 +21,8 @@ from recipe import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('recipes.urls')),
-    path('add-recipe/',views.add_recipe)
+    path('recipes/', views.recipe_list, name='recipe_list'),
+    path('add-recipe/',views.add_recipe),
+     path('update-recipe/<int:pk>/', views.update_recipe, name='update_recipe'),
+    path('delete-recipe/<int:pk>/', views.delete_recipe, name='delete_recipe'),
 ]
