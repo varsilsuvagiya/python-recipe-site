@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BistroBuzz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white fixed w-full top-0 z-10 shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <a href="#" class="text-2xl font-bold flex items-center font-sans">
+        BistroBuzz
+      </a>
+      <nav class="space-x-6">
+        <a href="#" class="hover:text-yellow-400">Home</a>
+        <a href="{% url 'recipe_list' %}" class="hover:text-yellow-400">Recipes</a>
+        <a href="/contact" class="hover:text-yellow-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
+    <div class="bg-black bg-opacity-50 p-10 rounded-lg">
+      <h1 class="text-5xl font-bold mb-6">Welcome to Our Restaurant</h1>
+      <p class="text-xl mb-8">Discover delicious recipes and experience the best cuisine in town.</p>
+      <div class="space-x-4">
+        <a href="{% url 'recipe_list' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded">
+          View Recipe List
+        </a>
+        <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded">
+          Visit Restaurant Site
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Menu Section -->
+  <section id="menu" class="bg-white py-16 px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Our Menu</h2>
+      <p class="text-gray-700 text-lg mb-12">
+        Explore our menu filled with a variety of dishes made from fresh ingredients. Whether you're craving pasta, pizza, or dessert—we have it all!
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Classic Pizza</h3>
+          <p class="text-gray-600">Delicious pizza topped with fresh mozzarella, basil, and tomatoes.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Spaghetti Carbonara</h3>
+          <p class="text-gray-600">Rich and creamy pasta with pancetta and parmesan cheese.</p>
+        </div>
+        <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-2">Tiramisu</h3>
+          <p class="text-gray-600">Classic Italian dessert with layers of mascarpone and coffee-soaked ladyfingers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-gray-100 py-16 px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">What Our Customers Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <p class="text-gray-700 italic">"The best dining experience I've ever had! The recipes are incredible."</p>
+          <h4 class="text-lg font-bold mt-4">- John Doe</h4>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-md">
+          <p class="text-gray-700 italic">"I love the variety of dishes offered. Everything is fresh and tasty!"</p>
+          <h4 class="text-lg font-bold mt-4">- Jane Smith</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-16 px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+      <p class="text-gray-700 text-lg mb-8">Have questions or want to make a reservation? Reach out to us!</p>
+      <p class="text-gray-800 font-bold">Email: contact@ourrestaurant.com</p>
+      <p class="text-gray-800 font-bold">Phone: +123 456 7890</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8 text-center text-white">
+    <p>&copy; 2025 BistroBuzz. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

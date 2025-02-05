@@ -20,6 +20,9 @@ from recipe import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('', views.home_page, name='home_page'),
+   path('contact/', views.contact_page, name='contact_page'),
+
     path('api/v1/', include('recipes.urls')),
     path('recipes/', views.recipe_list, name='recipe_list'),
     path('add-recipe/',views.add_recipe),

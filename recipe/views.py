@@ -49,3 +49,11 @@ def delete_recipe(request, pk):
     recipe = get_object_or_404(Recipe, pk=pk) #recipe = Recipe.objects.get(pk=pk)
     recipe.delete()
     return redirect('recipe_list')
+
+
+def home_page(request):
+    return render(request, 'home_page.html')
+
+def contact_page(request):
+
+    return render(request, 'contact_page.html')
