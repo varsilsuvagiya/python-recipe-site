@@ -10,7 +10,3 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class=RecipeSerializer
     
 
-
-def add_recipe(request):
-  
-    return render(request, 'add_recipe.html')
