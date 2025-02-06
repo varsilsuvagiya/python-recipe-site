@@ -4,6 +4,9 @@ from recipes.models import Recipe,Register
 
 def recipe_list(request):
     recipes = Recipe.objects.all()  # Fetch all recipes
+    if request.POST.get('search'):
+        search = request.POST.get('search')
+        recipes = recipes.filter(recipe_name__icontains=search)
     return render(request, 'recipe_list.html', {'recipes': recipes})
 
 def add_recipe(request):

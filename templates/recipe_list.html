@@ -9,7 +9,17 @@
 </head>
 <body class="bg-gray-100 min-h-screen p-8">
   <div class="max-w-7xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+    
     <h1 class="text-3xl font-bold mb-6 text-center">Recipe List</h1>
+    <form  method="POST" class="mb-4">
+      {% csrf_token %}
+      <div class="flex items-center space-x-4">
+        <input type="text" name="search" placeholder="Search recipe" class="w-full px-4 py-2 border rounded-lg">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">
+          Search
+        </button>
+      </div>
+    </form>
     <table class="min-w-full bg-white border border-gray-300">
       <thead>
         <tr>
@@ -21,6 +31,7 @@
         </tr>
       </thead>
       <tbody>
+        
         {% for recipe in recipes %}
           <tr class="hover:bg-gray-100">
             <td class="py-2 px-4 border-b">{{ recipe.id }}</td>
