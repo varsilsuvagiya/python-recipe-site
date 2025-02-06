@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from recipes.models import Recipe
+from recipes.models import Recipe,Register
 
 
 def recipe_list(request):
@@ -57,3 +57,30 @@ def home_page(request):
 def contact_page(request):
 
     return render(request, 'contact_page.html')
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        Register.objects.create(username=username, password=password, email=email, confirm_password=confirm_password)
+        return redirect('register')
+    return render(request, 'registration.html')
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = Register.objects.filter(username=username, password=password).first()
+        
+        if user:
+            return redirect('home_page')
+        else:
+            error = "Invalid username or password."
+            return render(request, 'login.html', {'error': error})
+    return render(request, 'login.html')
+
+
+def logout(request):
+    return redirect('login')
